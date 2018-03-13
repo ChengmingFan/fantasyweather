@@ -4,27 +4,41 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary">
 
-    <ScrollView
-        android:id="@+id/weather_layout"
+    <ImageView
+        android:id="@+id/bing_pic_img"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none"
-        android:overScrollMode="never">
+        android:scaleType="center"/>
 
-        <LinearLayout
-            android:orientation="vertical"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/weather_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:overScrollMode="never">
 
-            <include layout="@layout/title"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                >
 
-            <include layout="@layout/now"/>
+                <include layout="@layout/title"/>
 
-            <include layout="@layout/forecast"/>
+                <include layout="@layout/now"/>
 
-            <include layout="@layout/aqi"/>
+                <include layout="@layout/forecast"/>
 
-            <include layout="@layout/suggestion"/>
-        </LinearLayout>
-    </ScrollView>
+                <include layout="@layout/aqi"/>
+
+                <include layout="@layout/suggestion"/>
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </FrameLayout>
