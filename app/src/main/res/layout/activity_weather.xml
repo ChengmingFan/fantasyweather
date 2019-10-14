@@ -10,13 +10,12 @@
         android:layout_height="match_parent"
         android:scaleType="center"/>
 
-    <android.support.v4.widget.DrawerLayout
+    <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <android.support.v4.widget.SwipeRefreshLayout
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe_refresh"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -29,6 +28,7 @@
                 android:overScrollMode="never">
 
                 <LinearLayout
+                    android:id="@+id/weather1"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -45,13 +45,15 @@
 
                     <include layout="@layout/suggestion"/>
                 </LinearLayout>
+
+
             </ScrollView>
-        </android.support.v4.widget.SwipeRefreshLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
         <fragment
             android:id="@+id/choose_area_fragement"
             android:name="com.coolweather.android.chooseAreaFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"/>
-    </android.support.v4.widget.DrawerLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
 </FrameLayout>
